@@ -1,0 +1,90 @@
+@import "../../../styles/variable";
+
+.pop {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #b1aaaacd;
+
+    .text-end {
+        top: 0.5rem;
+        right: 0.4rem;
+        position: absolute;
+    }
+
+    .pop-body {
+        border-radius: 8px;
+        padding: 40px;
+        background: white;
+        opacity: 100%;
+        position: relative;
+        z-index: 300;
+        border: 1px solid $border-line;
+
+        .img_table_container {
+            display: grid;
+            grid-template-columns: 15% 85%;
+
+            .invt_img {
+                width: 100px;
+                height: 100px;
+                display: flex;
+                background-color: whitesmoke;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+            }
+        }
+
+        .field {
+            label {
+                margin-left: 15px;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table tr th {
+            width: 12%;
+        }
+
+        table tr td {
+            width: 12%;
+        }
+
+        table tr>:first-child {
+
+            width: 8%;
+
+        }
+
+        table tr>:last-child {
+            width: 8%;
+        }
+
+        .header-spacing {
+            margin-right: 10px;
+        }
+
+        .bg-white-smoke {
+            background-color: rgb(216, 213, 213);
+            border: none;
+            font-size: 11px;
+            // margin-inline: 10%;
+            cursor: auto;
+            min-width: 90px;
+        }
+
+        .table_cell {
+            text-align: center;
+            font-size: 12px;
+        }
+    }
+}

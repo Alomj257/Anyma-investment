@@ -1,0 +1,41 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies and build
+        run: |
+          npm ci
+          cd client
+          npm ci
+          npm run build
+          cd ..
+        shell: bash
+
+      - name: Restart PM2 and Nginx
+        run: |
+          cd /var/www/website/_work/stock-investment/stock-investment
+          if pm2 list | grep -q "online"; then
+              pm2 stop all
+              pm2 start all
+          else
+             pm2 start npm --name "mywebsite" -- run start
+          fi
+          pm2 save
+          sudo service nginx restart

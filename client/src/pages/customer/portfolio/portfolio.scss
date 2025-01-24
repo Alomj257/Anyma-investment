@@ -1,0 +1,136 @@
+@import "../../../styles/variable";
+
+.p-investment-table {
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0 10px;
+        background: white !important;
+    }
+
+    table tr>th {
+        border: none;
+        width: 11.11%;
+    }
+
+    table tr td {
+        padding: 10px;
+        width: 11.11%;
+        background-color: #fff;
+        // border-bottom: 2px solid $dark-orange;
+        // border-top: 2px solid $dark-orange;
+    }
+
+    table tr>:first-child {
+        background-color: #fff;
+        width: 10%;
+        // border: 2px solid $dark-orange;
+        // padding-left: 5%;
+        border-right: 0;
+    }
+
+    table tr>:last-child {
+        border-radius: 0 50% 50% 0;
+        // border: 2px solid $dark-orange;
+        width: 10%;
+        border-left: 0;
+    }
+
+}
+
+.p-txt {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.overview {
+    .box {
+        height: 110px;
+    }
+
+    .over-box {
+        display: grid !important;
+        height: 90px;
+        grid-template-columns: 80% 20%
+    }
+}
+
+.investment_container_table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+
+    .investment_container {
+        height: 6rem;
+        border-radius: 6px;
+        border: 1px solid black;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 10% 35% 35% 20%;
+        margin-bottom: 2%;
+
+        // .invt_img:hover {
+        //     cursor: pointer;
+        //     // display: 'flex' !important;
+        //     // justify-content: 'center' !important;
+        //     // align-items: 'center' !important;
+        //     // padding: '10px' !important
+        // }
+
+        .invt_ftq,
+        .invt_stq,
+        .invt_ltq {
+            display: flex;
+            margin-inline: 2%;
+            padding-top: 6%;
+            gap: 7px;
+            justify-content: center;
+
+            .bg-white-smoke {
+                background-color: rgb(216, 213, 213);
+                border: none;
+                cursor: auto;
+            }
+
+            .btn-sm {
+                font-size: 0.75rem;
+                padding: 5px 15px;
+            }
+        }
+
+        .invt_stq {
+            margin-left: -.5rem;
+        }
+
+        .invt_ltq {
+            padding-top: 10%;
+            margin-left: -1.5rem;
+
+            div>button>img {
+                width: 1rem;
+                margin-left: 15%;
+            }
+        }
+
+        .loss {
+            background-color: #fdc4c4 !important;
+            color: red !important;
+            cursor: auto;
+        }
+
+        .loss:hover {
+            background-color: #fcb1b1 !important;
+        }
+
+        .profit {
+            background-color: #C7EDD8 !important;
+            color: #1F9E59 !important;
+            cursor: auto;
+        }
+
+        .profit:hover {
+            background-color: #a7e6c3 !important;
+        }
+    }
+}

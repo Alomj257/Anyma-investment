@@ -1,0 +1,27 @@
+@import "./variable";
+
+.field{
+    label{
+        font-size: 18px;
+    }
+.input-field{
+    background: $input;
+    padding:  15px 20px;
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+}
+
+}
+
+ table tr>th {
+   font-family: $heading;
+   font-weight: 400;
+   color: $color-gray;
+   text-transform: uppercase !important;
+  }
+ table tr>td {
+   font-family: $para;
+   font-weight: 700;
+   color: $dark-color;
+  }
