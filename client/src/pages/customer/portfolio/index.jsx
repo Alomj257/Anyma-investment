@@ -60,7 +60,7 @@ const Portfolio = () => {
             qty: (moic && moic?.toString()?.substring(0, 4) + "x") || 0,
             icon: moicp,
         },
-        { name: "  NET IRR", qty: irrVal + "%", icon: irr },
+        { name: "  NET IRR", qty: Math.round(irrVal) + "%", icon: irr },
     ];
     useEffect(() => {
         const getCompany = async () => {
@@ -149,7 +149,7 @@ const Portfolio = () => {
                                                 <span className="text-muted small fw-bold OverView_title">{val?.name}</span>
                                                 <span className="fw-bold p-txt fs-5 OverView_items">
                                                     {val?.qty?.length > 20
-                                                        ? `${val?.qty.slice(0, 15)}....`
+                                                        ? `${val?.qty.slice(0, 3)} %`
                                                         : val?.qty
                                                     }
                                                 </span>
@@ -240,11 +240,10 @@ const Company = ({ companyId, list, index, deals, userId }) => {
                             style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />
                         <img src={frame}
                             style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />*/}
-                        <div className="invt_img_img">
-                            <img src={Server + company?.profile || company?.img}
-                                style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />
-                            <img src={rightArrow} className="right_red_arrow"></img>
-                        </div>
+                        {/* <div className="invt_img_img"> */}
+                        <img className="invt_img_img" src={Server + company?.profile || company?.img} alt="" />
+                        <img src={rightArrow} className="right_red_arrow"></img>
+                        {/* </div> */}
 
 
 

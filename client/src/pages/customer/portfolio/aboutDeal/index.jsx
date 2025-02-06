@@ -120,11 +120,9 @@ const AboutDeal = () => {
                             style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />
                              <img src={frame} style={{ width: '98%', maxWidth: '150px', padding:
                             '5px' }} alt="Frame" /> */}
-                            <div className="invt_img_img">
-                                <img src={Server + company?.profile || company?.img}
-                                    style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />
-                                <img src={rightArrow} className="right_red_arrow"></img>
-                            </div>
+                            <img className="invt_img_img" src={Server + company?.profile || company?.img} alt="" />
+                            <img src={rightArrow} className="right_red_arrow"></img>
+                            {/* </div> */}
 
                         </div>
                         <div className="invt_ftq">
