@@ -162,6 +162,26 @@
             }
         }
 
+        .invt_img {
+            //background-color: red;
+
+            .invt_img_img {
+                width: 100%;
+                height: 100%;
+                margin: 2%;
+                border-radius: 50%;
+                background: white;
+            }
+
+            .right_red_arrow {
+                z-index: 1;
+                position: relative;
+                float: right;
+                bottom: -45px;
+                width: 22px
+            }
+        }
+
         .loss {
             background-color: #fdc4c4;
             color: red;
