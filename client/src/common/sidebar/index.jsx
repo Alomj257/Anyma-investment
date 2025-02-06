@@ -6,7 +6,7 @@ import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { getAuth, logout } from "../../utils/authenticationHelper";
 import { Server } from "../../service/axios";
 import { getUserByIdService } from "../../service/auth/AuthService";
-import dummy from "../../assets/profile/user.png";
+import dummy from "../../assets/profile/UserProfileSidebar.png";
 
 const Sidebar = ({ sidebarData }) => {
     const userId = getAuth()?.user?._id;
@@ -58,7 +58,7 @@ const Sidebar = ({ sidebarData }) => {
                         </div>
                         <div className="d-flex flex-column justify-content py-2 mx-1">
                             <p className="m-0 p-0 text-capitalize">
-                                {user?.personal?.firstName} {user?.personal?.lastName}
+                                {user?.personal?.firstName ?? "Saugata"} {user?.personal?.lastName ?? "Dutta"}
                             </p>
                             <button
                                 onClick={() =>
@@ -99,7 +99,7 @@ const Sidebar = ({ sidebarData }) => {
                                             {val?.soon && (
                                                 <span
                                                     style={{ fontSize: "8px ", padding: "2.5px 0" }}
-                                                    className="bg-secondary ms-1 my-auto rounded-5 text-white px-2 position-absolute"
+                                                    className="bg-secondary ms-1 my-auto rounded-5 text-white px-2 position-absolute soon_portion"
                                                 >
                                                     SOON
                                                 </span>

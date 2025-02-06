@@ -130,7 +130,7 @@ const Portfolio = () => {
                 <div className="my-3">
                     <div className="bg-dark py-3 px-4 rounded d-flex justify-content-between">
                         <h5 className="text-white mb-0 fw-bold text-capitalize">
-                            Overview
+                            OVERVIEW
                         </h5>
                     </div>
                 </div>
@@ -174,7 +174,7 @@ const Portfolio = () => {
                     <div className="my-3">
                         <div className="bg-dark py-3 px-4 rounded d-flex justify-content-between">
                             <h5 className="text-white mb-0 fw-bold text-capitalize">
-                                Investments
+                                INVESTMENT
                             </h5>
                         </div>
                     </div>
