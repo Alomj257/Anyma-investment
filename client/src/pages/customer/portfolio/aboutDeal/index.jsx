@@ -204,7 +204,7 @@ const AboutDeal = () => {
                         <div className="invt_ltq">
                             <div>
                                 <button className="btn btn-sm bg-white-smoke text-dark text-nowrap">
-                                    Weight
+                                    WEIGHT
                                 </button>
                                 <div className="d-flex justify-content-center align-items-center" style={{ marginTop: '10%' }}>
                                     <div className="fw-bold p-txt" style={{ textAlign: 'center', fontSize: '13px' }}>

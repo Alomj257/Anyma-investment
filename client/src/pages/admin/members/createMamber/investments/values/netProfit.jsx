@@ -117,7 +117,7 @@ const NetProfit = ({ deals, sector, currentValuation, userId }) => {
                             color: irr.toString() == "NaN" ? "black" : irr < 0 ? "red" : "green"
                         }}
                     >
-                        {irr && irr.toString()?.substring(0, 4) + "%"}
+                        {irr && (irr * 100).toString()?.substring(0, 4) + "%"}
                     </div>
                 </div>
             </div>

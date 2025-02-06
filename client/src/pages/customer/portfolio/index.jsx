@@ -46,15 +46,15 @@ const Portfolio = () => {
         { name: " TOTAL INVESTMENTS", qty: totalInvestments, icon: invest },
         {
             name: "   AMOUNT INVESTED (INCL. FEES)",
-            qty: currencyFormatter(totalInvested),
+            qty: currencyFormatter(Math.round(totalInvested)),
             icon: amount,
         },
         {
             name: "CURRENT VALUE OF INVESTMENT",
-            qty: currencyFormatter(TotalCurrenctValuation),
+            qty: currencyFormatter(Math.round(TotalCurrenctValuation)),
             icon: valuation,
         },
-        { name: " NET PROFIT (LOSS)", qty: (profit < 0 ? "(-) " : "") + currencyFormatter(Math.abs(profit)), icon: pro },
+        { name: " NET PROFIT (LOSS)", qty: (profit < 0 ? "(-) " : "") + currencyFormatter(Math.abs(Math.round(profit))), icon: pro },
         {
             name: "  NET MOIC",
             qty: (moic && moic?.toString()?.substring(0, 4) + "x") || 0,
@@ -146,17 +146,17 @@ const Portfolio = () => {
 
                                         >
                                             <div className="d-flex flex-column justify-content-between">
-                                                <span className="text-muted small fw-bold" style={{ fontSize: '12px' }}>{val?.name}</span>
-                                                <span className="fw-bold p-txt fs-5" style={{ fontSize: '13px' }}>{val?.qty?.length > 20
-                                                    ? `${val?.qty.slice(0, 15)}....`
-                                                    : val?.qty
-                                                }
-
+                                                <span className="text-muted small fw-bold OverView_title">{val?.name}</span>
+                                                <span className="fw-bold p-txt fs-5 OverView_items">
+                                                    {val?.qty?.length > 20
+                                                        ? `${val?.qty.slice(0, 15)}....`
+                                                        : val?.qty
+                                                    }
                                                 </span>
                                             </div>
                                             <div
                                                 className="my-auto rounded-circle bg-very-light-red"
-                                                style={{ width: "50px", aspectRatio: "1/1" }}
+                                                style={{ width: "57px", aspectRatio: "1/1" }}
                                             >
                                                 <img className="w-200 h-100 p-3" src={val?.icon} alt="" />
                                             </div>
@@ -236,7 +236,18 @@ const Company = ({ companyId, list, index, deals, userId }) => {
                         display: 'flex', justifyContent: 'center', cursor: "pointer"
                         , alignItems: 'center', padding: '10px'
                     }}>
-                        <img src={Server + company?.profile || company?.img} style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />
+                        {/* <img src={Server + company?.profile || company?.img || frame}
+                            style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />
+                        <img src={frame}
+                            style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />*/}
+                        <div className="invt_img_img">
+                            <img src={Server + company?.profile || company?.img}
+                                style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />
+                            <img src={rightArrow} className="right_red_arrow"></img>
+                        </div>
+
+
+
                     </div>
                     <div className="invt_ftq">
                         <div>
@@ -283,11 +294,11 @@ const Company = ({ companyId, list, index, deals, userId }) => {
                     <div className="invt_ltq">
                         <div>
                             <button className="btn btn-sm bg-white-smoke text-dark text-nowrap">
-                                Weight
+                                WEIGHT
                             </button>
                             <div className="d-flex justify-content-center align-items-center" style={{ marginTop: '10%' }}>
                                 <div className="fw-bold p-txt" style={{ textAlign: 'center', fontSize: '13px' }}>
-                                    ---
+                                    100%
                                 </div>
                             </div>
                         </div>

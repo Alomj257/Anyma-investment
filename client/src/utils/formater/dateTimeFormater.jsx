@@ -15,7 +15,7 @@ export function formatTimeFromNow(dateTime) {
 //             currency: 'EUR',
 //           });
 //          return euroFormatter.format(val);
-        
+
 //     } catch (error) {
 //         console.log(error)
 //       return  euroFormatter.format(0)
@@ -24,20 +24,20 @@ export function formatTimeFromNow(dateTime) {
 
 export const currencyFormatter = (val, currency = 'EUR', style = 'currency') => {
     try {
-      
-      return new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: currency,
-        minimumFractionDigits: 2,
-      }).format(val);
-    } catch (error) {
-      return val !== undefined ? formatter.format(0) : '0'; 
-    }
-  };
 
-  export const deformateCurrency = (formattedCurrency) => {
-    console.log(formattedCurrency)
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: currency,
+            minimumFractionDigits: 0,
+        }).format(val);
+    } catch (error) {
+        return val !== undefined ? formatter.format(0) : '0';
+    }
+};
+
+export const deformateCurrency = (formattedCurrency) => {
+    //console.log(formattedCurrency)
     // const numericString = formattedCurrency.replace(/[^\d-]/g, '');
-    
+
     return parseInt(numericString, 10);
-  };
+};
