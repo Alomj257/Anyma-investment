@@ -14,10 +14,36 @@ import { calculateXIRRPortfolio } from '../../../../utils/calculations/portfolio
 import spaceXBg from '../../../../assets/all-img/spaceX_bg.png'
 import frame from '../../../../assets/all-img/Frame.png'
 import rightArrow from '../../../../assets/all-img/right_arrow.png'
+import { downloadFileService } from '../../../../service/company/companyService'
 const AboutDeal = () => {
     const { state } = useLocation();
     const [company, setCompany] = useState(null);
+    const [updateFileName, setUpdateFileName] = useState([]);
+    const [updateDoc, setUpdateDoc] = useState([]);
     const userId = getAuth()?.user?._id;
+    const downloadFile = (file) => {
+        downloadFileService(file);
+    }
+    //Update
+    const handlepdateDoc = (e) => {
+        try {
+            const { name, files } = e.target;
+            setUpdateFileName([
+                ...updateFileName,
+                { name: files[0]?.name, id: updateDoc.length },
+            ]);
+            setUpdateDoc([
+                ...updateDoc,
+                {
+                    [name]: files[0],
+                    id: updateDoc.length,
+                    date: new Date().toLocaleDateString(),
+                },
+            ]);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     useEffect(() => {
         const getCompanyById = async () => {
@@ -79,6 +105,7 @@ const AboutDeal = () => {
         };
 
         getCompanyById();
+
     }, [state, userId]);
 
 
@@ -201,7 +228,7 @@ const AboutDeal = () => {
                                         color: company?.dealSummary?.irr.toString() == "NaN" ? "black" : company?.dealSummary?.irr < 0 ? "red" : "green"
                                     }}>
                                         {company?.dealSummary?.irr.length > 8
-                                            ? company?.dealSummary?.irr.slice(0, 8) + "...%"
+                                            ? company?.dealSummary?.irr.slice(0, 4) + "%"
                                             : company?.dealSummary?.irr}
                                     </div>
                                 </div>
@@ -214,8 +241,7 @@ const AboutDeal = () => {
                                 </button>
                                 <div className="d-flex justify-content-center align-items-center" style={{ marginTop: '10%' }}>
                                     <div className="fw-bold p-txt" style={{ textAlign: 'center', fontSize: '13px' }}>
-                                        {/* <GetWeight userId={userId}
-                                            amount={val?.investors && val?.investors?.find(v => v.investerId === userId)?.amount} /> */}
+                                        100%
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +292,10 @@ const AboutDeal = () => {
                                     <div>
                                         <FaRegFileLines className='text-muted' size={20} /></div>
                                     <div className="d-flex flex-column gap-1" style={{ fontSize: '14px' }}>
-                                        <small className='text-muted'> CONTRACT UPDATE</small>
+                                        <small onClick={() => downloadFile(val?.originalname)} className="text-muted cursor-pointer">
+                                            {
+                                                val?.originalname || 'CONTRACT UPDATE'
+                                            }</small>
                                         <small className='fw-bold'>{val?.date}</small>
                                     </div>
                                 </div>
@@ -285,7 +314,10 @@ const AboutDeal = () => {
                                     <div>
                                         <FaRegFileLines className='text-muted' size={20} /></div>
                                     <div className="d-flex flex-column gap-1" style={{ fontSize: '14px' }}>
-                                        <small className='text-muted'> CONTRACT UPDATE</small>
+                                        <small onClick={() => downloadFile(val?.originalname)} className="text-muted cursor-pointer">
+                                            {
+                                                val?.originalname || 'CONTRACT UPDATE'
+                                            }</small>
                                         <small className='fw-bold'>{val?.date}</small>
                                     </div>
                                 </div>
