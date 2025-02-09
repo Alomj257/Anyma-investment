@@ -316,7 +316,7 @@ const AboutDeal = () => {
                                     <div className="d-flex flex-column gap-1" style={{ fontSize: '14px' }}>
                                         <small onClick={() => downloadFile(val?.originalname)} className="text-muted cursor-pointer">
                                             {
-                                                val?.originalname || 'CONTRACT UPDATE'
+                                                val?.originalname || 'INVESTMENT DOCS'
                                             }</small>
                                         <small className='fw-bold'>{val?.date}</small>
                                     </div>
