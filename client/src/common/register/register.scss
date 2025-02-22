@@ -1,76 +1,124 @@
 @import "../../styles/variable";
-.register{
+
+.register {
     display: grid;
     grid-template-columns: 1.6fr 2fr;
     height: 100vh;
     width: 100vw;
     z-index: 1;
+
     @media (max-width:1200px) {
         grid-template-columns: 0.8fr 2fr;
     }
+
     @media (max-width:700px) {
         display: block;
     }
-    .register-left{
+
+    .register-left {
         height: inherit;
+
         @media (max-width:700px) {
             display: none;
         }
     }
-    .register-right{
+
+    .register-right {
         background: $dark-color;
         color: white;
         padding: 20px;
         overflow-y: scroll;
         scrollbar-width: none;
-        .logo{
+
+        .logo {
             width: 200px;
         }
-        .pres{
+
+        .pres {
             letter-spacing: 0.25em;
-            margin-top:-1rem ;
-            margin-left:10px ;
+            margin-top: -1rem;
+            margin-left: 10px;
         }
-        .progress-comp{
-            ul{
+
+        @media (max-width:400px) {
+            .pres {
+                font-size: 11px;
+                margin-top: -0.8rem;
+                white-space: nowrap;
+                margin-left: 20px;
+                display: inline-block;
+            }
+
+            .res_adj {
+                margin-left: -20px;
+            }
+
+            .semibol {
+                font-size: 15px;
+                margin-left: 5%;
+            }
+
+            button {
+                width: 80% !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                padding: 10px 20px;
+            }
+        }
+
+        .progress-comp {
+            ul {
                 list-style: none;
                 display: flex;
-                li{
+
+                li {
                     width: 100%;
                     text-align: center;
                     display: flex;
                     flex-direction: column;
                     color: $very-light-color;
-                    &.active{
+
+                    &.active {
                         color: $dark-orange;
-                       .node, .empty{
+
+                        .node,
+                        .empty {
                             background: $dark-orange;
                             transition: background 500ms;
                         }
                     }
-                    .node{
+
+                    .node {
                         height: 10px;
                         aspect-ratio: 1/1;
-                        background:  $color-gray;
+                        background: $color-gray;
                         border-radius: 50%;
                     }
                 }
-                .empty{
+
+                .empty {
                     background: $color-gray;
                     height: 1.5px;
                 }
             }
         }
+
         // comp
-        .bg-border{
+        .bg-border {
             background: $border-line;
         }
-        .field{
-           .input-field, input{
-                background:$border-line;
+
+        .field {
+
+            .input-field,
+            input {
+                background: $border-line;
                 color: white;
             }
-            .eye{
+
+            .eye {
                 position: absolute;
                 right: 20px;
                 bottom: 18px;
