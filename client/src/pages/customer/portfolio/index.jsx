@@ -232,17 +232,12 @@ const Company = ({ companyId, list, index, deals, userId }) => {
                         display: 'flex', justifyContent: 'center', cursor: "pointer"
                         , alignItems: 'center', padding: '10px'
                     }}>
-                        {/* <img src={Server + company?.profile || company?.img || frame}
-                            style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />
-                        <img src={frame}
-                            style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />*/}
+                        {/* <img src={frame}
+                            style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" /> */}
                         {/* <div className="invt_img_img"> */}
                         <img className="invt_img_img" src={Server + company?.profile || company?.img} alt="" />
                         <img src={rightArrow} className="right_red_arrow"></img>
                         {/* </div> */}
-
-
-
                     </div>
                     <div className="invt_ftq">
                         <div>
@@ -297,8 +292,10 @@ const Company = ({ companyId, list, index, deals, userId }) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <button className="btn btn-sm text-dark text-nowrap bg-white-smoke loss" style={{ cursor: "pointer" }} onClick={() => setisDealList(true)}>
+                        <div className="resp">
+                            <button className="btn btn-sm text-dark text-nowrap bg-white-smoke loss"
+                                style={{ cursor: "pointer" }}
+                                onClick={() => setisDealList(true)}>
                                 N° of INV.
                                 <img src={rightArrow} alt="Right Arrow" />
                             </button>

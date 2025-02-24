@@ -100,7 +100,6 @@
     }
 }
 
-
 // investment container
 .investment_container_table {
     display: flex;
@@ -108,7 +107,7 @@
     width: 100%;
     gap: 10px;
 
-    .investment_container {
+    .investment_container_ {
         height: 6rem;
         border-radius: 6px;
         border: 1px solid black;
@@ -199,5 +198,51 @@
         .profit:hover {
             background-color: #a7e6c3;
         }
+    }
+}
+
+@media (max-width: 600px) {
+    .company_container {
+        width: 100%;
+        height: 200vh;
+
+    }
+
+    //investment
+    .investment_container_ {
+        height: 50vh !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        margin-block: 4% !important;
+        gap: 2% !important;
+
+        .invt_ftq,
+        .invt_stq,
+        .invt_ltq {
+            flex-wrap: wrap !important;
+            justify-content: space-evenly !important;
+            align-items: center !important;
+        }
+    }
+
+    .investment_container_ .invt_img {
+        .invt_img_img {
+            width: 80%;
+            height: 80%;
+            margin-left: 0;
+            margin-block: 10% !important;
+        }
+
+        .right_red_arrow {
+            width: 16px !important;
+        }
+    }
+
+    //
+    .belowContainer {
+        display: flex !important;
+        flex-direction: column !important;
     }
 }

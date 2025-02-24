@@ -88,3 +88,21 @@
         }
     }
 }
+
+@media (max-width: 500px) {
+    .pop {
+        .pop-body {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+
+            table {
+                display: none;
+            }
+
+            .img_table_container {
+                margin-left: 22%;
+            }
+        }
+    }
+}

@@ -141,7 +141,7 @@ const AboutDeal = () => {
                     </div>
                 </div>
                 <div className="investment_container_table">
-                    <div className="investment_container" >
+                    <div className="investment_container_" >
                         <div className="invt_img" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px' }}>
                             {/*<img src={Server + company?.profile || company?.img}
                             style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />
