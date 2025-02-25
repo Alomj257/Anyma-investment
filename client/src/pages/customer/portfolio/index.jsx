@@ -137,37 +137,33 @@ const Portfolio = () => {
                 <div className="overview">
                     <div className="container w-100 pe-0">
                         <div className="row">
-                            <div className="row row-cols-3 pe-0">
+                            <div className="row row-cols-1 row-cols-md-3 pe-0">
                                 {fieldData?.map((val, index) => (
-                                    <div key={index} className="px-0 ">
+                                    <div key={index} className="px-0">
                                         <div
-                                            className={`d-flex px-4 py-2 border border-1 box mb-3 over-box ${index % 3 !== 0 && "mx-3 me-0"
+                                            className={`d-flex px-2 py-2 border border-1 box mb-3 over-box ${index % 3 !== 0 && "mx-md-3 me-0"
                                                 } rounded-3 border-dark bg-white justify-content-between`}
-
                                         >
                                             <div className="d-flex flex-column justify-content-between">
                                                 <span className="text-muted small fw-bold OverView_title">{val?.name}</span>
                                                 <span className="fw-bold p-txt fs-5 OverView_items">
-                                                    {val?.qty?.length > 20
-                                                        ? `${val?.qty.slice(0, 3)} %`
-                                                        : val?.qty
-                                                    }
+                                                    {val?.qty?.length > 20 ? `${val?.qty.slice(0, 3)} %` : val?.qty}
                                                 </span>
                                             </div>
                                             <div
                                                 className="my-auto rounded-circle bg-very-light-red"
                                                 style={{ width: "57px", aspectRatio: "1/1" }}
                                             >
-                                                <img className="w-200 h-100 p-3" src={val?.icon} alt="" />
+                                                <img className="w-100 h-100 p-3" src={val?.icon} alt="" />
                                             </div>
                                         </div>
-
                                     </div>
                                 ))}
                             </div>
                         </div>
                     </div>
                 </div>
+
 
                 {/* investment */}
                 <div className="h-50">
@@ -236,17 +232,12 @@ const Company = ({ companyId, list, index, deals, userId }) => {
                         display: 'flex', justifyContent: 'center', cursor: "pointer"
                         , alignItems: 'center', padding: '10px'
                     }}>
-                        {/* <img src={Server + company?.profile || company?.img || frame}
-                            style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />
-                        <img src={frame}
-                            style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" />*/}
+                        {/* <img src={frame}
+                            style={{ width: '98%', maxWidth: '150px', padding: '5px' }} alt="" /> */}
                         {/* <div className="invt_img_img"> */}
                         <img className="invt_img_img" src={Server + company?.profile || company?.img} alt="" />
                         <img src={rightArrow} className="right_red_arrow"></img>
                         {/* </div> */}
-
-
-
                     </div>
                     <div className="invt_ftq">
                         <div>
@@ -301,8 +292,10 @@ const Company = ({ companyId, list, index, deals, userId }) => {
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <button className="btn btn-sm text-dark text-nowrap bg-white-smoke loss" style={{ cursor: "pointer" }} onClick={() => setisDealList(true)}>
+                        <div className="resp">
+                            <button className="btn btn-sm text-dark text-nowrap bg-white-smoke loss"
+                                style={{ cursor: "pointer" }}
+                                onClick={() => setisDealList(true)}>
                                 N° of INV.
                                 <img src={rightArrow} alt="Right Arrow" />
                             </button>

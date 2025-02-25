@@ -1,10 +1,12 @@
 @import "../../../styles/variable";
-.customer-layout{
+
+.customer-layout {
     // gap: 15px;
     display: flex;
-    .main-part{
+
+    .main-part {
         flex: 2;
-        padding:50px;
+        padding: 50px;
         box-shadow: 0px 0px 20px $light-color inset;
         height: 100vh;
         overflow-y: scroll;
@@ -14,5 +16,13 @@
         //     overflow-y: scroll;
         //     scrollbar-width: none;
         // }
+    }
+}
+
+@media (max-width:500px) {
+    .customer-layout {
+        .sidebar-upper {
+            display: none;
+        }
     }
 }
