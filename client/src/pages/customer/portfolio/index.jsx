@@ -141,7 +141,7 @@ const Portfolio = () => {
                                 {fieldData?.map((val, index) => (
                                     <div key={index} className="px-0">
                                         <div
-                                            className={`d-flex px-2 py-2 border border-1 box mb-3 over-box ${index % 3 !== 0 && "mx-md-3 me-0"
+                                            className={`d-flex px-4 py-2 border border-1 box mb-3 over-box ${index % 3 !== 0 && "mx-3 me-0"
                                                 } rounded-3 border-dark bg-white justify-content-between`}
                                         >
                                             <div className="d-flex flex-column justify-content-between">
