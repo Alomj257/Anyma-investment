@@ -210,22 +210,15 @@
 
     //investment
     .investment_container_ {
-        height: 50vh !important;
+        overflow-x: auto;
         display: flex !important;
-        flex-direction: column !important;
-        flex-wrap: nowrap !important;
-        align-items: center !important;
-        margin-block: 4% !important;
-        gap: 2% !important;
 
-        .invt_ftq,
-        .invt_stq,
         .invt_ltq {
-            flex-wrap: wrap !important;
-            justify-content: space-evenly !important;
-            align-items: center !important;
+            padding-top: 5% !important;
+            margin-left: 0rem !important;
         }
     }
+
 
     .investment_container_ .invt_img {
         .invt_img_img {

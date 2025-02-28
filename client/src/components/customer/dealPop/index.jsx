@@ -13,6 +13,13 @@ const DealListpop = ({ setIsNew, company, deals, userId }) => {
     const user = getAuth()?.user;
     return (
         <div className="pop">
+            <div className="text-end-resp">
+                <BsX
+                    onClick={() => setIsNew((pre) => !pre)}
+                    className="cursor-pointer"
+                    size={25}
+                />
+            </div>
             <div className="pop-body col-md-8">
                 <div className="text-end">
                     <BsX

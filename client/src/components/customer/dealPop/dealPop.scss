@@ -17,6 +17,10 @@
         position: absolute;
     }
 
+    .text-end-resp {
+        display: none;
+    }
+
     .pop-body {
         border-radius: 8px;
         padding: 40px;
@@ -91,17 +95,23 @@
 
 @media (max-width: 500px) {
     .pop {
+        .text-end-resp {
+            display: block;
+            background-color: white;
+            border: 1px solid black;
+            right: -8.5rem;
+            z-index: 2;
+            top: 0rem;
+            position: relative;
+        }
+
         .pop-body {
             width: 80%;
             display: flex;
-            flex-direction: column;
+            overflow-x: auto;
 
-            table {
+            .text-end {
                 display: none;
-            }
-
-            .img_table_container {
-                margin-left: 22%;
             }
         }
     }
