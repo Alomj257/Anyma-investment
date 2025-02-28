@@ -26,7 +26,7 @@ const Login = () => {
     }
     return (
         <div className='login-pop'>
-            <div className='no_resp'><Navbar /></div>
+            <div className='no_nav'><Navbar /></div>
             <div className="login">
                 <div className="login-body col-4">
                     <form onSubmit={handleSubmit}>

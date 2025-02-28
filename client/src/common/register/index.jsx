@@ -227,19 +227,15 @@ const Register = () => {
                             {/* saugata */}
                             <div className="row">
                                 <div className="col-12 col-md-10 ps-0 ms-auto d-flex justify-content-between align-items-center">
-                                    <div className="row">
-                                        <div className="col-6 col-md-6 col-sm-12">
-                                            <h5 className="semibol">
-                                                Please complete your onboarding <br /> to access the
-                                                Anyma Platform.
-                                            </h5>
+                                    <h5 className="semibol">
+                                        Please complete your onboarding <br /> to access the
+                                        Anyma Platform.
+                                    </h5>
+                                    <div className="d-flex flex-column">
+                                        <div className="logo">
+                                            <img className="w-100 h-100" src={logo} alt="" />
                                         </div>
-                                        <div className="d-flex flex-column col-6 col-md-6 col-sm-12 res_adj">
-                                            <div className="logo">
-                                                <img className="w-100 h-100" src={logo} alt="" />
-                                            </div>
-                                            <small className="pres">Investor dashboard</small>
-                                        </div>
+                                        <small className="pres">Investor dashboard</small>
                                     </div>
                                 </div>
                                 <div className="col-12 col-md-10 mx-auto">
@@ -292,7 +288,8 @@ const Register = () => {
                                                     }}
                                                     id=""
                                                 />
-                                                <label style={{ cursor: "pointer" }} htmlFor="agree" className="my-auto">
+
+                                                <label style={{ cursor: "pointer" }} htmlFor="agree" className="my-auto ">
                                                     Agree, Our terms and conditions
                                                 </label>
                                                 <Link className="text-white fw-semibold" to="/terms">
