@@ -1,24 +1,29 @@
 @import '../../styles/variable';
-.login-pop{
+
+.login-pop {
     background: $dark-color;
-    .login{
+
+    .login {
         height: 90vh;
         display: flex;
-        
+
     }
-    .login-body{
+
+    .login-body {
         border-radius: 8px;
         padding: 20px;
         opacity: 100%;
         z-index: 300;
         color: white;
         margin: auto;
+
         // border: 1px solid $border-line;
-        .field{
-            label{
+        .field {
+            label {
                 margin-left: 15px;
             }
-            .input-field{
+
+            .input-field {
                 // border: 2px solid $dark-orange;
                 border: none;
                 background: #000;
@@ -27,5 +32,16 @@
                 color: white;
             }
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .no_nav {
+        display: none;
+    }
+
+    .login-body {
+        width: 70%;
+        margin-left: 11% !important;
     }
 }
